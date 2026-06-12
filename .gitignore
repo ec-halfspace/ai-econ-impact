@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Tooling caches
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.mplcache/
+
+# OS / editor
+.DS_Store
+
+# Keep working notes tracked (they are committed on purpose)
+!.cursor/
+!.cursor/notes/

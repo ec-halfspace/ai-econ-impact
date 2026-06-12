@@ -1,0 +1,41 @@
+[project]
+name = "ai-econ-impact"
+version = "0.1.0"
+description = "Research on the economic impact of AI - a second brain and RA for papers, data, and simulations."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pymc>=5.16",
+    "arviz>=0.18",
+    "matplotlib>=3.9,<3.11",
+    "plotly>=5.22",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "jupyterlab>=4.2",
+    "ipykernel>=6.29",
+    "pandas-stubs>=2.2",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [".ipynb_checkpoints"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "W"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true

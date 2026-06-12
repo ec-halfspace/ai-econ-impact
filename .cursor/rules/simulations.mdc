@@ -1,0 +1,29 @@
+---
+description: Conventions for running simulations from data and theoretical models in the papers
+globs: simulations/**/*.py,notebooks/**/*.ipynb
+alwaysApply: false
+---
+
+# Simulations & Modeling
+
+Simulations operationalize the theoretical models and empirical estimates described in the
+papers (see `notes/papers/`) using real or synthetic data.
+
+## Grounding
+- Tie every simulation to a specific source: link the relevant `notes/papers/<slug>.md` and/or
+  concept note at the top of the script.
+- Document the **model**, its **assumptions**, and all **parameters** (with values and where they
+  come from) in a header docstring or top markdown cell.
+
+## Bayesian work (PyMC)
+- State **priors explicitly** and justify them (informative vs weakly-informative, and why).
+- Set random seeds for reproducibility.
+- Report **convergence diagnostics** (trace plots, R-hat, divergences, effective sample size),
+  not just point estimates.
+- Communicate results as **distributions / credible intervals**, conveying uncertainty.
+
+## General
+- Keep models small, modular, and documented; factor shared logic into `src/`.
+- Make runs reproducible (seed, pinned params) and runnable top-to-bottom.
+- Where possible, **validate** against the source paper's reported results and note any divergence.
+- Type-hint functions; run `ruff` and `mypy` on code in `src/`.

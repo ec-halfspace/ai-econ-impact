@@ -1,0 +1,38 @@
+---
+description: Project identity, repo structure, and core tooling baseline for the AI economic impact research repo
+alwaysApply: true
+---
+
+# AI Economic Impact - Project Overview
+
+## What this repo is
+A research initiative studying the **economic impact of AI** (impact on jobs, working hours, sectors, wages, productivity, and more), grounded in applied microeconomics: causal inference, organizational and behavioural economics.
+
+This repo acts as a **second brain and research assistant**: it ingests papers, datasets, and theoretical models, and turns them into structured notes, analyses, and simulations.
+
+## Repo structure
+- `papers/` - raw PDFs (input only)
+- `notes/papers/` - one Markdown note per paper (research questions, methodology, results)
+- `notes/concepts/` - thematic notes on AI economic impact (jobs, working hours, sectors, wages, productivity, etc.)
+- `data/` - datasets
+- `notebooks/` - exploratory data analysis
+- `simulations/` - simulations using data + theoretical models from papers
+- `src/` - shared, reusable Python code
+
+## Tooling baseline
+- **Environment & dependencies**: `uv` (use `uv add`, `uv run`)
+- **Lint + format**: `Ruff` (`ruff check .`, `ruff format .`)
+- **Type checking**: `mypy`
+- **Core libraries**: pandas, numpy; matplotlib/plotly for viz; PyMC for Bayesian work
+
+## Conventions
+- Type-hint function signatures; keep functions small and testable.
+- Put reusable logic in `src/`; import it into notebooks rather than copy-pasting.
+- Keep all written knowledge (paper summaries, concepts) as Markdown.
+- Prefer reproducibility: seed randomness, make notebooks runnable top-to-bottom.
+
+## Living document
+These rules are a starting point. Keep them **short** and update them as the project evolves and best practices emerge - edit the relevant rule in `.cursor/rules/`, and keep `README.md` in sync when structure or setup changes.
+
+## Working notes
+Session history and decision records live in `.cursor/notes/` (see the `session-logging` rule). Read `.cursor/notes/session-log.md` at the start of a session.

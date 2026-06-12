@@ -1,0 +1,65 @@
+---
+description: Workflow for parsing research PDFs into structured paper notes and concept notes
+globs: papers/**/*.pdf,notes/papers/**/*.md,notes/concepts/**/*.md
+alwaysApply: false
+---
+
+# Papers -> Research Notes
+
+When a PDF is added to `papers/`, parse it end-to-end and produce two artifacts.
+
+## 1. Per-paper note: `notes/papers/<author-year-slug>.md`
+Read the full paper and fill this template. Be specific and quote key numbers/effect sizes.
+
+```markdown
+# <Title>
+
+- **Authors / Year**: 
+- **Venue / Source**: 
+- **PDF**: ../../papers/<file>.pdf
+- **Themes**: [[jobs]], [[working-hours]], ...  # link to notes/concepts/
+
+## Research question(s)
+- 
+
+## Methodology
+- Design (causal/descriptive/structural), identification strategy, model.
+
+## Data
+- Source, sample, unit of observation, time period, key variables.
+
+## Main results
+- Headline findings with magnitudes and uncertainty.
+
+## Relevance to AI economic impact
+- How this informs jobs / hours / sectors / wages / productivity.
+
+## Limitations & open questions
+- 
+```
+
+## 2. Concept note(s): `notes/concepts/<concept>.md`
+After summarizing, create or update a thematic note tied to the economic impact of AI
+(e.g. `jobs.md`, `working-hours.md`, `by-sector.md`, `wages.md`, `productivity.md`).
+
+```markdown
+# <Concept> (e.g. Impact on Jobs)
+
+## Summary
+- Current synthesis across papers.
+
+## Evidence
+- <Finding> - [<Author Year>](../papers/<slug>.md)
+
+## Tensions / disagreements
+- 
+
+## Open questions
+- 
+```
+
+## Rules
+- Always cross-link: paper notes reference concept notes and vice versa.
+- One concept per concept-note; split when a theme grows too broad.
+- Do not edit raw PDFs in `papers/`; they are input only.
+- Slugs are lowercase, hyphenated (e.g. `acemoglu-2024-automation`).

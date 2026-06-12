@@ -1,0 +1,29 @@
+---
+description: Conventions for exploratory data analysis notebooks and datasets
+globs: notebooks/**/*.ipynb,data/**
+alwaysApply: false
+---
+
+# Data & Exploratory Analysis
+
+## Datasets (`data/`)
+- At the top of each notebook, document the dataset's **provenance** (source, URL/citation,
+  download date), **unit of observation**, **time coverage**, and a short **schema** (columns + dtypes + meaning).
+- Never commit large/sensitive raw data without checking; prefer documenting how to fetch it.
+
+## EDA flow
+Structure notebooks top-to-bottom in this order:
+1. Setup (imports, seed, paths) and load with pandas.
+2. Sanity checks: shape, dtypes, missingness, duplicates, basic `describe()`.
+3. Univariate distributions of key variables.
+4. Relationships / correlations / group comparisons relevant to AI economic impact.
+
+## Plotting
+- Use matplotlib or plotly.
+- Every figure has a **title** and **labeled axes** (with units).
+- Below each figure, add a markdown cell stating the **interesting pattern** in one or two sentences (this is the deliverable, not just the plot).
+
+## Code quality
+- Push reusable loaders/cleaners/transforms into `src/` and import them; keep notebook cells thin.
+- Make notebooks **reproducible**: set a random seed, ensure they run cleanly top-to-bottom, use relative paths.
+- Type-hint helper functions and run `ruff` / `mypy` on anything moved to `src/`.

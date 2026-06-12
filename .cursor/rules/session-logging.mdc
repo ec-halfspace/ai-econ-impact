@@ -1,0 +1,31 @@
+---
+description: How to read and maintain the session log and decision records in .cursor/notes/
+alwaysApply: true
+---
+
+# Session Logging & Decisions
+
+Work happens in short, weekly sessions. `.cursor/notes/` keeps continuity between them.
+
+## At the start of a session
+- Read `.cursor/notes/session-log.md` and open the latest entry in `.cursor/notes/sessions/`.
+- Continue from its "Next steps".
+
+## At the end of a session (or a natural stopping point)
+- Create a **new** file `.cursor/notes/sessions/YYYY-MM-DD-<slug>.md` (copy `sessions/TEMPLATE.md`).
+- Keep it short - summarize, don't diff (git holds the diff). Fill in:
+  - Date / timestamp
+  - What changed (brief)
+  - Current state / what's working
+  - Open issues or blockers
+  - Next steps / TODO
+- Add a one-line link to the new entry at the top of the index in `session-log.md`.
+
+## Decision records
+When a non-trivial choice is made ("we chose X over Y because Z"), add a new file
+`.cursor/notes/decisions/NNNN-<slug>.md` (copy `decisions/TEMPLATE.md`): context, decision,
+alternatives considered, rationale, consequences.
+
+## Rules
+- These notes are committed to git; do not place secrets in them.
+- One session entry per session; one decision record per decision.
