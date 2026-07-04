@@ -1,0 +1,21 @@
+﻿Name,Assign
+[23-06-26] analyse failure modes of CoT traces,Anamaria Leonescu
+[17-06-26] Try to match gdpval results across models,Anamaria Leonescu
+[17-06-26] Understand precisely how generate_loop and react differ,Anamaria Leonescu
+[9-06-26] harness definition/ approach → tue-thu,
+[18-06-26] Refactor to use native Inspect scoring,Dom Dathan
+[17-06-26] Judge scoring deep dive,Anamaria Leonescu
+[21-05-26] Dom/ilakya/Jamie to onboard Yveta,
+"[wk1] fellow setup: API key, repo access, etc.",
+[21-05-26] ilakya to handover work to Ana,
+[wk1] background reading and understand the core repos and create plans,
+[wk1] Ana to curate potential directions for the harnesses/ capabilities investigation,
+presentation fri,
+[9-06-26] working session - discuss timelines and other risks,
+experiments w react → wed-fri,
+"[16-06-26] papers put together, organise board",
+push new commit w the solver package,
+,
+[18-06-26] Look into deepagent,"Xiaoliang Luo, Anamaria Leonescu"
+judges traces analysis,Anamaria Leonescu
+[17-06-26] Reduce score variance produced by the judge over repeats,Anamaria Leonescu
