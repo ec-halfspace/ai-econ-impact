@@ -14,6 +14,9 @@ venv/
 # OS / editor
 .DS_Store
 
+# Raw papers are local-only input; keep knowledge in Markdown notes instead
+*.pdf
+
 # Keep working notes tracked (they are committed on purpose)
 !.cursor/
 !.cursor/notes/

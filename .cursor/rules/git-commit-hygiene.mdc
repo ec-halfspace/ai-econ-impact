@@ -1,0 +1,16 @@
+---
+description: Git commit hygiene - do not commit PDFs
+alwaysApply: true
+---
+
+# Do not commit PDFs
+
+Never stage or commit `.pdf` files. Raw papers live in `papers/` as
+local-only input; keep the knowledge in Markdown notes (`notes/papers/`)
+instead of committing the source PDFs.
+
+- When staging changes, exclude `*.pdf` (e.g. `git add` specific files, or
+  `git add -A` then `git reset -- '*.pdf'`).
+- If a PDF is already staged, unstage it before committing.
+- If asked to commit "everything", still leave PDFs out and mention that you
+  skipped them.
